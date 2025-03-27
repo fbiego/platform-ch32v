@@ -94,6 +94,8 @@ class ChipInfo:
     def get_svd_file(self) -> str:
         if self.name.lower().startswith("ch32v317"):
             return "CH32V317xx.svd"
+        if self.name.lower().startswith("ch585"):
+            return "CH585.svd"
         return self.exact_series().upper() + "xx.svd"
 
 chip_db: List[ChipInfo] = [
@@ -108,6 +110,10 @@ chip_db: List[ChipInfo] = [
     ChipInfo("CH571F", 192+32, 16+2, 20, "QFN28"),
     ChipInfo("CH571D", 192+32, 16+2, 20, "QFN20"),
     ChipInfo("CH571K", 192+32, 16+2, 20, "ESSOP10"),
+    # CH585 (has +32K data flash)
+    ChipInfo("CH585M", 448+32, 128, 78, "QFN48"),
+    ChipInfo("CH585F", 448+32, 128, 78, "QFN32"),
+    ChipInfo("CH585C", 448+32, 128, 78, "QFN26C3"),
     # CH58x (has +32K data flash)
     ChipInfo("CH583M", 448+32, 32, 20, "QFN48"),
     ChipInfo("CH582M", 448+32, 32, 20, "QFN48"),
