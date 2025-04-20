@@ -80,7 +80,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "https://github.com/Community-PIO-CH32V/framework-wch-noneos-sdk.git"
+      "version": "https://github.com/fbiego/framework-wch-noneos-sdk.git"
     },
     "framework-wch-freertos": {
       "type": "framework",
