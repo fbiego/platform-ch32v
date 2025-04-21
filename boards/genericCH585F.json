@@ -11,7 +11,7 @@
     "mabi": "ilp32",
     "march": "rv32imac",
     "mcu": "ch585f",
-    "series": "ch58x"
+    "series": "ch585"
   },
   "debug": {
     "onboard_tools": [
@@ -37,6 +37,6 @@
       "wlink"
     ]
   },
-  "url": "http://www.wch-ic.com/products/CH58X.html",
+  "url": "http://www.wch-ic.com/products/CH585.html",
   "vendor": "W.CH"
 }

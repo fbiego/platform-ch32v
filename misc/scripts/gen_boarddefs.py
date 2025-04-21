@@ -79,6 +79,8 @@ class ChipInfo:
         return self.name[:-2]
 
     def exact_series(self) -> str:
+        if self.name.lower().startswith("ch585"):
+            return self.name[0:len("ch585")].upper()
         if self.name.lower().startswith("ch5"):
             return self.name[0:len("ch58")].upper() + "X"
         # Hack: Even ch32x033 is recognized as x035 series.

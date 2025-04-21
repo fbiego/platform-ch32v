@@ -34,6 +34,8 @@ def get_linker_script(mcu: str):
     default_ldscript = join(env.subst("$BUILD_DIR"), "Link.ld")
 
     # for now, when building for ch56x, ch57x, ch58x, use the original linker scripts..
+    if mcu.lower().startswith("ch585"):
+        return join(FRAMEWORK_DIR, "platformio", "ldscripts", "Link_" + board.get("build.series", "")) + ".ld"
     if mcu.lower().startswith("ch5"):
         return join(FRAMEWORK_DIR, "platformio", "ldscripts", "Link_" + board.get("build.series", "")[0:-1].upper() + "x") + ".ld"
     ram = board.get("upload.maximum_ram_size", 0)
@@ -159,6 +161,8 @@ if chip_series.startswith("ch57") or chip_series.startswith("ch58") or chip_seri
     env.Append(LIBPATH=[join(FRAMEWORK_DIR, "Peripheral", chip_series, "src")])
     if chip_series.startswith("ch57"):
         libs += ["ISP573"]
+    elif chip_series.startswith("ch585"):
+        libs += ["ISP585"]
     elif chip_series.startswith("ch58"):
         libs += ["ISP583"]
     else:
